@@ -475,9 +475,23 @@ input[type="checkbox"]:checked+.checkbox-icon {
 
 .checkbox-icon {
   content: "\25A1";
-  
+
 }
 
+.show-tour-btn.active {
+  background-color: #007bff; 
+  color: white;
+  cursor: pointer;
+}
+
+.show-tour-btn.active:hover {
+  background-color: #0056b3; 
+  transform: translateY(-2px);
+}
+
+.show-tour-btn.active:active {
+  transform: translateY(0);
+}
 
 input[type="checkbox"]:checked+.checkbox-icon {
   content: "\2713";
@@ -490,4 +504,42 @@ input[type="checkbox"]:checked+.checkbox-icon {
   font-size: 1.1rem;
   font-weight: bold;
 }
+ 
 
+.comfort-options {
+  display: flex;
+  gap: 15px;
+}
+
+.custom-radio-label { 
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  background-color: white;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #333;
+}
+ 
+.custom-radio-input { 
+    opacity: 0; 
+    position: absolute;  
+    width: 0;
+    height: 0;
+}
+
+ 
+.custom-radio-label:has(input:checked) { 
+  background-color: #007bff;  
+  color: white;
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.custom-radio-label:hover {
+  border-color: #007bff;
+}
+ 

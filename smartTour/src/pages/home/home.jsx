@@ -1,18 +1,25 @@
 import React from "react";
-import "./home.css"; 
+import { useNavigate } from "react-router-dom";  
+import "./home.css";
 
 import logo from "../../assets/logo.png";
 import arxaFonSekli from "../../assets/Şuşa_qalası.jpg";
 
 function HomePage() {
+  const navigate = useNavigate();  
+
+  const handleStartJourney = () => {
+    navigate("/login");  
+  };
+
   return (
-    <div 
-      className="homepage-container" 
-      style={{ 
+    <div
+      className="homepage-container"
+      style={{
         backgroundImage: `
           linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
           url(${arxaFonSekli})
-        `
+        `,
       }}
     >
       <nav className="navbar">
@@ -27,7 +34,7 @@ function HomePage() {
         </div>
         <div className="navbar-lang">
           <button className="lang-button">
-            Eng <span>&#9662;</span> 
+            Eng <span>&#9662;</span>
           </button>
         </div>
       </nav>
@@ -35,8 +42,10 @@ function HomePage() {
       <main className="hero-section">
         <div className="hero-box">
           <h1>SmartTour: The Future of Travel in Azerbaijan</h1>
-          <p>Choose, Click and relax</p>
-          <button className="cta-button">Start your journey</button>
+          <p>Choose, Click and relax</p> 
+          <button className="cta-button" onClick={handleStartJourney}>
+            Start your journey
+          </button>
         </div>
       </main>
     </div>

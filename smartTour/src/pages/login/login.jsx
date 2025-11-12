@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css"; 
+import "./Login.css";
 import logo from "../../assets/logo.png";
-import cityBg from "../../assets/Şuşa_qalası.jpg"; 
-import formBg from "../../assets/agfon.png"; 
+import cityBg from "../../assets/Şuşa_qalası.jpg";
+import formBg from "../../assets/agfon.png";
 
 const EyeIcon = () => <span>👁️</span>;
 
 const Login = () => {
   const [isLoginView, setIsLoginView] = useState(true);
   const navigate = useNavigate();
-
+ 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/customizeTour");
   };
 
   const switchToLogin = () => setIsLoginView(true);
@@ -41,8 +41,7 @@ const Login = () => {
       <div
         className="auth-form-section"
         style={{
-      
-          opacity:0.75,
+          opacity: 0.75,
           backgroundImage: `
     
       linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),

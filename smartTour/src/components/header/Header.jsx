@@ -2,6 +2,12 @@ import React from "react";
 import "./header.css";
 import { FiMessageCircle } from "react-icons/fi";
 import { FaSearch } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
+import { IoCartOutline } from "react-icons/io5";
+import { MdOutlineBook } from "react-icons/md";
+import { TbWorld } from "react-icons/tb";
+import { IoPersonSharp } from "react-icons/io5";
+import { RiChatSmileAiLine } from "react-icons/ri";
 const Header = () => {
   return (
     <div className="container">
@@ -21,27 +27,27 @@ const Header = () => {
         </div>
         <div className="right">
           <div className="icon">
-            <FiMessageCircle size={30} />
+            <RiChatSmileAiLine size={30} />
             <p>Ask AI</p>
           </div>
           <div className="icon">
-            <FiMessageCircle size={30} />
+            <CiHeart size={30} style={{ strokeWidth: 1 }} />
             <p>Wishlist</p>
           </div>
           <div className="icon">
-            <FiMessageCircle size={30} />
+            <IoCartOutline size={30} />
             <p>Cart</p>
           </div>
           <div className="icon">
-            <FiMessageCircle size={30} />
+            <MdOutlineBook size={30} />
             <p>Bookings</p>
           </div>
           <div className="icon">
-            <FiMessageCircle size={30} />
+            <TbWorld size={30} />
             <p>EN/USD</p>
           </div>
           <div className="icon">
-            <FiMessageCircle size={30} />
+            <IoPersonSharp size={30} />
             <p>Profile</p>
           </div>
         </div>
