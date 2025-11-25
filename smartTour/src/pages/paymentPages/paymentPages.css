@@ -7,7 +7,7 @@
 }
 
 .screen {
-    max-width: 1000px;
+    max-width: 75%;
     margin: 0 auto;
     padding: 0 20px 50px 20px;
 }
@@ -368,6 +368,7 @@
     width: auto;
     margin: 0 auto;
 }
+.payOptionImage{width: 50px;}
  
 @media (max-width: 850px) {
     .step-content-layout {

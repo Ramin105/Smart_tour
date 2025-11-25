@@ -1,5 +1,5 @@
-import React, { useState } from "react";  
-import { useNavigate } from "react-router-dom";  
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./selectTour.css";
 
 import bakuImage from "../../assets/baku.jpg";
@@ -7,7 +7,6 @@ import shamakhiImage from "../../assets/shamakhi.jpg";
 import lerikImage from "../../assets/lerik.jpg";
 import qusarImage from "../../assets/qusar.jpg";
 
- 
 const DestinationCard = ({
   image,
   city,
@@ -18,7 +17,7 @@ const DestinationCard = ({
 }) => (
   <div
     className={`destination-card ${isSelected ? "selected" : ""}`}
-    onClick={() => onClick(city)}  
+    onClick={() => onClick(city)}
   >
     <div className="card-image-container">
       <img src={image} alt={city} className="card-image" />
@@ -26,7 +25,7 @@ const DestinationCard = ({
         className="bookmark-button"
         aria-label="Kaydet"
         onClick={(e) => e.stopPropagation()}
-      > 
+      >
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M5 4C5 3.44772 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V20.5739C19 20.8988 18.6657 21.1197 18.3741 20.9754L12 17.8931L5.62594 20.9754C5.33433 21.1197 5 20.8988 5 20.5739V4Z"
@@ -76,16 +75,16 @@ const initialDestinations = [
 ];
 
 const SelectTour = () => {
-  const [selectedDestination, setSelectedDestination] = useState(null); 
+  const [selectedDestination, setSelectedDestination] = useState(null);
   const navigate = useNavigate();
- 
+
   const fullDestinationsList = [...initialDestinations, ...initialDestinations];
 
-  const handleSelectDestination = (city) => { 
+  const handleSelectDestination = (city) => {
     setSelectedDestination(city === selectedDestination ? null : city);
-    console.log(`Selected: ${city}`); 
+    console.log(`Selected: ${city}`);
   };
- 
+
   const handleGoBack = () => {
     navigate(-1);
   };
@@ -94,7 +93,7 @@ const SelectTour = () => {
     <div className="app-container">
       <header className="header">
         <div className="back-button" onClick={handleGoBack}>
-          {" "} 
+          {" "}
           <svg
             width="24"
             height="24"
@@ -118,7 +117,7 @@ const SelectTour = () => {
 
       <div className="subtitle-container">
         <p className="subtitle">Click on the region you want to explore</p>
-        <span className="see-all">See all &gt;</span>
+        <Link to="/chooseTour" className="see-all">See all &gt;</Link>
       </div>
 
       <main className="destinations-grid">
@@ -128,9 +127,9 @@ const SelectTour = () => {
             image={dest.image}
             city={dest.city}
             country={dest.country}
-            description={dest.description} 
+            description={dest.description}
             isSelected={dest.city === selectedDestination}
-            onClick={handleSelectDestination}  
+            onClick={handleSelectDestination}
           />
         ))}
       </main>

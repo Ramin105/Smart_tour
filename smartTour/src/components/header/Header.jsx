@@ -8,6 +8,8 @@ import { MdOutlineBook } from "react-icons/md";
 import { TbWorld } from "react-icons/tb";
 import { IoPersonSharp } from "react-icons/io5";
 import { RiChatSmileAiLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div className="container">
@@ -34,22 +36,24 @@ const Header = () => {
             <CiHeart size={30} style={{ strokeWidth: 1 }} />
             <p>Wishlist</p>
           </div>
-          <div className="icon">
+
+          <Link to="/cart" className="icon">
             <IoCartOutline size={30} />
             <p>Cart</p>
-          </div>
-          <div className="icon">
+          </Link>
+
+          <Link to="/payment" className="icon">
             <MdOutlineBook size={30} />
             <p>Bookings</p>
-          </div>
+          </Link>
           <div className="icon">
             <TbWorld size={30} />
             <p>EN/USD</p>
           </div>
-          <div className="icon">
+          <Link to="/profil" className="icon">
             <IoPersonSharp size={30} />
             <p>Profile</p>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

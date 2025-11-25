@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";  
 import "./home.css";
-
+import { IoPersonSharp } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import arxaFonSekli from "../../assets/Şuşa_qalası.jpg";
 
@@ -36,6 +36,7 @@ function HomePage() {
           <button className="lang-button">
             Eng <span>&#9662;</span>
           </button>
+<IoPersonSharp size={20}/>
         </div>
       </nav>
 

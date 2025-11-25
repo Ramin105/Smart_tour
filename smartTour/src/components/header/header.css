@@ -58,7 +58,7 @@
        align-items: center;
        justify-content: center;
        color: #154784;
-
+text-decoration: none;
        p {
            font-size: 12px;
        }
